@@ -1,5 +1,6 @@
 package com.istanbul.eminonurehber.Repository;
 
+import com.istanbul.eminonurehber.Entity.Category;
 import com.istanbul.eminonurehber.Entity.Company;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -13,4 +14,6 @@ public interface CompanyRepository extends JpaRepository<Company, Long> {
     Optional<Company> findByEmail(String email);
 
     List<Company> findTop5ByOrderByClickCountDesc();
+
+    List<Company> findAllByCategoryId(Long categoryId);
 }
